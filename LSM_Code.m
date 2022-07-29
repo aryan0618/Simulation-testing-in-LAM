@@ -253,8 +253,16 @@ br4 = mesh_v(:,8);
 br = [br1 br2 br3 br4];
 br = br.';
 
+prompt = "Pick the property needed for colouring before the process:";
+prompt = prompt + newline + "1.Orientation";
+prompt = prompt + newline + "2.Temperature" + newline;
+x = input(prompt);
         
+if x == 1
 patch(ar,br,mesh_properties(:,3),'Edgecolor','black');
+elseif x == 2
+patch(ar,br,mesh_properties(:,1),'Edgecolor','black');
+end
 %patch('Faces',f,'Vertices',v,'FaceVertexCData',col,'FaceColor','flat');
 %patch('Faces',mesh_v,'Vertices',mesh_vertices,'FaceVertexCData',mesh_properties(:,3),'FaceColor','flat','Edgecolor','black')
 
